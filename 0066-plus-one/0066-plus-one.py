@@ -1,21 +1,30 @@
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
-        num = ''
-        new_arr = []
+        last = len(digits) - 1
         
-        for i in digits:
-            num+= str(i)
-            
-        int_num = int(num)
-        int_num+=1
+        if digits[last] < 9:
+            digits[last] +=1
+            return digits
         
-        new_num = str(int_num)
-        
-        for i in new_num:
-            new_arr.append(int(i))
+        while digits[last] == 9:
+            if last == 0 and digits[last] == 9:
+                digits[last] = 1
+                digits.append(0)
+                return digits
+                
+            if digits[last - 1] == 9:
+                digits[last] = 0
+                last -=1
+                
+            elif digits[last - 1] < 9:
+                digits[last] = 0
+                digits[last - 1] += 1
+                return digits
+                
+                
             
-        return new_arr
-            
+           
+        return digits
             
         
             
