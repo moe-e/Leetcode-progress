@@ -4,15 +4,13 @@ class Solution:
         
         while digits[last] ==9:
             digits[last] = 0
+            
+            if last == 0:
+                return [1] + digits
+            
             last -=1
             
-            
-        if last < 0 :
-            digits = [1] + digits
-            
-        else:
-            digits[last] += 1
-            
+        digits[last] +=1
         return digits
             
             
