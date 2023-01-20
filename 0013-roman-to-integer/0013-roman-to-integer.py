@@ -10,7 +10,7 @@ class Solution(object):
         for i in range(len(s)):
             if i == len(s)- 1:
                 res+= ht[s[i]]
-                return res
+                break
             
             if ht[s[i]] < ht[s[i+1]]:
                 res-=ht[s[i]]
