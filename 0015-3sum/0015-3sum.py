@@ -21,7 +21,7 @@ class Solution:
                 else:
                     if [nums[i],nums[l],nums[r]] not in res:
                         res.append([nums[i],nums[l],nums[r]])
-                    l += 1
+                    r -= 1
 
         return res
         
