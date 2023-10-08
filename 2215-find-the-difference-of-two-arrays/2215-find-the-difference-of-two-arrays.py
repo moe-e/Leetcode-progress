@@ -3,15 +3,15 @@ class Solution:
         res1 = []
         res2 = []
         
-        for i in nums1:
-            if i not in nums2 and i not in res1:
-                res1.append(i)
+        for num in nums1:
+            if num not in res1 and num not in nums2:
+                res1.append(num)
                 
+        for num in nums2:
+            if num not in res2 and num not in nums1:
+                res2.append(num)
+                
+        return [res1, res2]
         
-        for j in nums2 :
-            if j not in nums1 and j not in res2:
-                res2.append(j)
-                
-        return [res1,res2]
         
         
